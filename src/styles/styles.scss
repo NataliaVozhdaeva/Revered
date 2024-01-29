@@ -5,6 +5,14 @@ $white-transparent: #ffffff80;
 $strong-red: #bc4749;
 $weak-red: #d66567;
 $shadow: rgba(0, 0, 0, 0.1);
+$light-green: #6a994e;
+$dark-green: #1d252b;
+$gray: #d0d0d0;
+
+@mixin title {
+  color: $white;
+  font-weight: 600;
+}
 
 * {
   transition: 0.3s;
@@ -14,6 +22,7 @@ body {
   margin: auto;
 
   font-family: 'Inter', sans-serif;
+  color: $white;
 
   background: url('../assets/decor/bg1.png') no-repeat;
   background-size: 100%;
@@ -45,6 +54,10 @@ body {
 .btn {
   box-sizing: border-box;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   color: $white;
   font-weight: 500;
   font-size: 12px;
@@ -70,8 +83,8 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  max-width: 1209px;
-  margin: 0 48px 0 63px;
+  max-width: 1195px;
+  margin: 0px 32px 45px 56px;
   min-height: 39px;
 
   font-size: 12px;
@@ -120,10 +133,6 @@ body {
     }
 
     &_active {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
       width: 114px;
       height: 39px;
 
@@ -135,5 +144,53 @@ body {
         background-color: darken($color: $strong-red, $amount: 10%);
       }
     }
+  }
+}
+
+.main-title {
+  @include title;
+  font-size: 41px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.offer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 969px;
+  height: 629px;
+  margin: 0 155px 0 182px;
+
+  &-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: flex-end;
+
+    width: 334px;
+    height: 592px;
+    padding: 45px 60px 53px;
+
+    background-color: $light-green;
+    border-radius: 11px;
+    box-shadow: 0px 3.785px 94.621px 0px $shadow;
+  }
+
+  &-item.active {
+    position: absolute;
+    left: calc(50% - 167px);
+
+    align-self: flex-start;
+
+    height: 600px;
+
+    background-color: $dark-green;
+  }
+
+  &-btn {
+    width: 214px;
   }
 }
