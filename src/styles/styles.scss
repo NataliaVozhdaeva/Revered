@@ -1,16 +1,139 @@
 @import './libs';
 
+$white: #fff;
+$white-transparent: #ffffff80;
+$strong-red: #bc4749;
+$weak-red: #d66567;
+$shadow: rgba(0, 0, 0, 0.1);
+
+* {
+  transition: 0.3s;
+}
+
 body {
   margin: auto;
 
   font-family: 'Inter', sans-serif;
 
-  background: url('../assets/decor/bg.png') no-repeat center;
-  background-size: cover;
+  background: url('../assets/decor/bg1.png') no-repeat;
+  background-size: 100%;
 }
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  text-decoration: none;
+  color: $white-transparent;
+
+  &:visited {
+    color: $white-transparent;
+  }
+
+  &:focus {
+    font-weight: 500;
+  }
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.btn {
+  box-sizing: border-box;
+
+  color: $white;
+  font-weight: 500;
+  font-size: 12px;
+
+  background-color: transparent;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 .wrapper {
   box-sizing: border-box;
   max-width: 1306px;
-  margin: auto;
-  min-height: 100vh;
+
+  margin: 35px auto 38px;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 1209px;
+  margin: 0 48px 0 63px;
+  min-height: 39px;
+
+  font-size: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 87px;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 50px;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+
+  color: $white;
+  text-decoration: line-through;
+  font-weight: 700;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  & svg {
+    margin-right: 5px;
+  }
+}
+
+.signing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  &-btn {
+    color: $white-transparent;
+    &:hover {
+      color: $white;
+    }
+
+    &_active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 114px;
+      height: 39px;
+
+      background-color: $strong-red;
+      border: $weak-red solid 1px;
+      border-radius: 7px;
+
+      &:hover {
+        background-color: darken($color: $strong-red, $amount: 10%);
+      }
+    }
+  }
 }
