@@ -11,6 +11,7 @@ $gray: #d0d0d0;
 
 @mixin title {
   font-weight: 600;
+  margin: 0;
 }
 
 @function func-darken($mycolor) {
@@ -156,6 +157,14 @@ body {
   font-size: 41px;
   text-align: center;
   margin-bottom: 32px;
+  margin-left: 13px;
+}
+
+.offer-title,
+.features-title {
+  @include title;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .offer {
@@ -164,8 +173,8 @@ body {
   justify-content: space-between;
 
   max-width: 969px;
-  height: 629px;
-  margin: 0 155px 0 182px;
+  height: 632px;
+  margin: 0 147px 0 191px;
 
   &-item {
     box-sizing: border-box;
@@ -176,7 +185,7 @@ body {
 
     width: 334px;
     min-height: 592px;
-    padding: 45px 0 28px;
+    padding: 38px 0 28px;
 
     background-color: $light-green;
     border-radius: 11px;
@@ -187,6 +196,10 @@ body {
     padding: 0 60px 10px;
 
     border-bottom: solid 1px #ffffff1a;
+  }
+
+  &-title {
+    margin-bottom: 18px;
   }
 
   &-btn {
@@ -204,9 +217,12 @@ body {
   }
 
   &-text {
+    margin-top: 18px;
+
     color: #ffffffcc;
     font-size: 12px;
     font-weight: 400;
+    line-height: 140%;
   }
 
   &-item.active {
@@ -217,13 +233,14 @@ body {
     align-self: flex-start;
 
     height: 600px;
-    padding-bottom: 53px;
+    padding-bottom: 34px;
+    padding-top: 48px;
 
     background-color: $dark-green;
   }
 
   &-features {
-    padding: 0 60px 10px;
+    padding: 23px 60px 10px;
   }
 }
 
@@ -253,12 +270,6 @@ body {
   }
 }
 
-.offer-title,
-.features-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .price {
   display: flex;
 
@@ -273,7 +284,7 @@ body {
   }
 
   & span:nth-child(2) {
-    margin-right: 4px;
+    margin-right: 6px;
 
     font-size: 38px;
     font-weight: 800;
@@ -291,7 +302,9 @@ body {
 .features {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 17px;
+
+  margin-left: 18px;
 
   font-size: 13px;
   font-weight: 400;
@@ -303,7 +316,7 @@ body {
   }
 
   &-subtitle {
-    margin: 0 0 24px;
+    margin: 0 0 27px;
   }
 
   &-item {

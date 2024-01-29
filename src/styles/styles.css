@@ -406,6 +406,7 @@ body {
 }
 .signing-btn {
   font-weight: 600;
+  margin: 0;
   color: rgba(255, 255, 255, 0.5019607843);
 }
 .signing-btn:hover {
@@ -424,9 +425,19 @@ body {
 
 .main-title {
   font-weight: 600;
+  margin: 0;
   font-size: 41px;
   text-align: center;
   margin-bottom: 32px;
+  margin-left: 13px;
+}
+
+.offer-title,
+.features-title {
+  font-weight: 600;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .offer {
@@ -434,8 +445,8 @@ body {
   display: flex;
   justify-content: space-between;
   max-width: 969px;
-  height: 629px;
-  margin: 0 155px 0 182px;
+  height: 632px;
+  margin: 0 147px 0 191px;
 }
 .offer-item {
   box-sizing: border-box;
@@ -445,7 +456,7 @@ body {
   align-self: flex-end;
   width: 334px;
   min-height: 592px;
-  padding: 45px 0 28px;
+  padding: 38px 0 28px;
   background-color: #6a994e;
   border-radius: 11px;
   box-shadow: 0px 3.785px 94.621px 0px rgba(0, 0, 0, 0.1490196078);
@@ -453,6 +464,9 @@ body {
 .offer-header {
   padding: 0 60px 10px;
   border-bottom: solid 1px rgba(255, 255, 255, 0.1019607843);
+}
+.offer-title {
+  margin-bottom: 18px;
 }
 .offer-btn {
   align-self: center;
@@ -465,9 +479,11 @@ body {
   background-color: #53773d;
 }
 .offer-text {
+  margin-top: 18px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   font-weight: 400;
+  line-height: 140%;
 }
 .offer-item.active {
   position: absolute;
@@ -475,11 +491,12 @@ body {
   left: calc(50% - 167px);
   align-self: flex-start;
   height: 600px;
-  padding-bottom: 53px;
+  padding-bottom: 34px;
+  padding-top: 48px;
   background-color: #1d252b;
 }
 .offer-features {
-  padding: 0 60px 10px;
+  padding: 23px 60px 10px;
 }
 
 .offer-item.active .offer-header {
@@ -503,12 +520,6 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.offer-title,
-.features-title {
-  font-size: 16px;
-  font-weight: 600;
-}
-
 .price {
   display: flex;
   height: 38px;
@@ -520,7 +531,7 @@ body {
   font-weight: 500;
 }
 .price span:nth-child(2) {
-  margin-right: 4px;
+  margin-right: 6px;
   font-size: 38px;
   font-weight: 800;
 }
@@ -534,7 +545,8 @@ body {
 .features {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 17px;
+  margin-left: 18px;
   font-size: 13px;
   font-weight: 400;
   list-style-image: url("../assets/decor/list-marker.png");
@@ -543,7 +555,7 @@ body {
   margin-bottom: 10px;
 }
 .features-subtitle {
-  margin: 0 0 24px;
+  margin: 0 0 27px;
 }
 .features-item_default {
   color: rgba(255, 255, 255, 0.8);
