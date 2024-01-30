@@ -11,25 +11,23 @@ function browsersync() {
 }
 
 function buildSass() {
-  return (
-    src('src/styles/**/*.scss')
-      .pipe(sass())
-      .on('error', sass.logError)
-      .pipe(dest('src/styles'))
-      //.pipe(dest('dist/styles'))
-      .pipe(browserSync.stream())
-  );
+  return src('src/styles/**/*.scss')
+    .pipe(sass())
+    .on('error', sass.logError)
+    .pipe(dest('src/styles'))
+    .pipe(dest('dist/styles'))
+    .pipe(browserSync.stream());
 }
 
 function html() {
-  return src('src/**/*.html').pipe(browserSync.stream()); //.pipe(dest('dist/'));
+  return src('src/**/*.html').pipe(browserSync.stream()).pipe(dest('dist/'));
 }
 
 function copyimg() {
   return src('src/assets/**/*.*').pipe(dest('dist/assets/'));
 }
 
-function copyFavivon() {
+function copyFavicon() {
   return src('src/favicon.ico').pipe(dest('dist/'));
 }
 
@@ -38,7 +36,7 @@ function cleanDist() {
 }
 
 function buildJs() {
-  return src('src/main.js').pipe(browserSync.stream()); //.pipe(dest('dist'));
+  return src('src/main.js').pipe(browserSync.stream()).pipe(dest('dist'));
 }
 
 function serve() {
@@ -48,5 +46,5 @@ function serve() {
 }
 
 exports.clean = series(cleanDist);
-exports.build = series(cleanDist, buildSass, buildJs, html, copyimg, copyFavivon);
+exports.build = series(cleanDist, buildSass, buildJs, html, copyimg, copyFavicon);
 exports.default = series([cleanDist, buildSass, buildJs], parallel(browsersync, serve));
