@@ -313,11 +313,10 @@ template {
 }
 
 body {
-  min-height: 100vh;
   margin: auto;
   color: #fff;
   font-family: "Inter", sans-serif;
-  background: url("../assets/decor/bg1.png") no-repeat center, linear-gradient(#36603e 35.82%, #1e262c 100%) no-repeat, linear-gradient(to right, #294234, #22312f);
+  background: url("../assets/decor/bg1.png") no-repeat 50% -6%, linear-gradient(#36603e 35.82%, #1e262c 100%) no-repeat, linear-gradient(to right, #294234, #22312f);
   background-size: cover;
 }
 
@@ -446,19 +445,19 @@ body {
 }
 
 .offer {
-  margin: 0 147px 0 191px;
   display: grid;
   grid-template-columns: repeat(3, 334px);
   grid-template-rows: 632px;
   max-width: 969px;
   height: 632px;
+  margin: 0 147px 0 191px;
 }
 .offer-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 38px 0 28px;
-  margin-top: 37px;
+  margin-top: 40px;
   grid-area: 1/1/2/2;
   width: 334px;
   min-height: 592px;
@@ -470,7 +469,7 @@ body {
   margin-left: 315px;
 }
 .offer-item:nth-child(3) {
-  margin-left: 630px;
+  margin-left: 635px;
 }
 .offer-header {
   padding: 0 60px 10px;
@@ -534,6 +533,7 @@ body {
   height: 38px;
   padding-bottom: 15px;
   border-bottom: solid 1px rgba(255, 255, 255, 0.1019607843);
+  box-sizing: content-box;
 }
 .price span:first-child {
   font-size: 11px;

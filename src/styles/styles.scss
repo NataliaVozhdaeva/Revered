@@ -24,13 +24,12 @@ $gray: #d0d0d0;
 }
 
 body {
-  min-height: 100vh;
   margin: auto;
 
   color: $white;
   font-family: 'Inter', sans-serif;
 
-  background: url('../assets/decor/bg1.png') no-repeat center, linear-gradient(#36603e 35.82%, #1e262c 100%) no-repeat,
+  background: url('../assets/decor/bg1.png') no-repeat 50% -6%, linear-gradient(#36603e 35.82%, #1e262c 100%) no-repeat,
     linear-gradient(to right, #294234, #22312f);
   background-size: cover;
 }
@@ -173,12 +172,13 @@ body {
 }
 
 .offer {
-  margin: 0 147px 0 191px;
   display: grid;
   grid-template-columns: repeat(3, 334px);
   grid-template-rows: 632px;
+
   max-width: 969px;
   height: 632px;
+  margin: 0 147px 0 191px;
 
   &-item {
     display: flex;
@@ -186,7 +186,7 @@ body {
     justify-content: space-between;
 
     padding: 38px 0 28px;
-    margin-top: 37px;
+    margin-top: 40px;
 
     grid-area: 1 / 1 / 2 / 2;
     width: 334px;
@@ -201,7 +201,7 @@ body {
     }
 
     &:nth-child(3) {
-      margin-left: 630px;
+      margin-left: 635px;
     }
   }
 
@@ -287,6 +287,7 @@ body {
   padding-bottom: 15px;
 
   border-bottom: solid 1px #ffffff1a;
+  box-sizing: content-box;
 
   & span:first-child {
     font-size: 11px;
