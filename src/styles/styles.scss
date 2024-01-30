@@ -173,28 +173,36 @@ body {
 }
 
 .offer {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
-
+  margin: 0 147px 0 191px;
+  display: grid;
+  grid-template-columns: repeat(3, 334px);
+  grid-template-rows: 632px;
   max-width: 969px;
   height: 632px;
-  margin: 0 147px 0 191px;
 
   &-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-self: flex-end;
 
+    padding: 38px 0 28px;
+    margin-top: 37px;
+
+    grid-area: 1 / 1 / 2 / 2;
     width: 334px;
     min-height: 592px;
-    padding: 38px 0 28px;
 
     background-color: $light-green;
     border-radius: 11px;
     box-shadow: 0px 3.785px 94.621px 0px $shadow;
+
+    &:nth-child(2) {
+      margin-left: 315px;
+    }
+
+    &:nth-child(3) {
+      margin-left: 630px;
+    }
   }
 
   &-header {
@@ -231,12 +239,9 @@ body {
   }
 
   &-item.active {
-    position: absolute;
     z-index: 1;
-    left: calc(50% - 167px);
 
-    align-self: flex-start;
-
+    margin-top: 0;
     height: 600px;
     padding-bottom: 34px;
     padding-top: 48px;

@@ -21,3 +21,26 @@ document.addEventListener('click', (e) => {
     toggleMobileMenu();
   }
 });
+
+//hover for cards
+
+const cards = document.querySelectorAll('.offer-item');
+const cardBtns = document.querySelectorAll('.offer-btn');
+
+const makeContent = (el) => {
+  el.querySelector('.offer-btn').textContent = el.classList.contains('active') ? 'Get Started' : 'Start Free Trial';
+};
+
+cards.forEach((item) => makeContent(item));
+
+const makeActive = (e) => {
+  cards.forEach((item) => {
+    item.classList.remove('active');
+  });
+  e.currentTarget.classList.add('active');
+  cards.forEach((item) => makeContent(item));
+};
+
+cards.forEach((item) => {
+  item.addEventListener('mouseover', makeActive);
+});

@@ -44,7 +44,7 @@ function buildJs() {
 function serve() {
   watch('src/**/*.scss', buildSass);
   watch('src/**/*.html', html);
-  watch(['src/js/**/*.js', '!src/js/**/*.min.js'], buildJs);
+  watch(['src/*.js', '!src/js/**/*.min.js'], buildJs);
 }
 
 exports.clean = series(cleanDist);

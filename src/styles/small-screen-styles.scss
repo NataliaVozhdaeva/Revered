@@ -1,19 +1,37 @@
 $strong-red: #bc4749;
 $dark-green: #1d252b;
 
+@media only screen and (max-width: 1330px) {
+  .offer {
+    margin: auto;
+  }
+}
+
 @media only screen and (max-width: 1024px) {
   .main-title {
     margin-left: 0;
   }
 
   .offer {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 334px;
+    grid-template-rows: repeat(3, 632px);
 
+    margin: auto;
+    max-width: 350px;
     height: auto;
 
     &-item {
-      align-self: center;
+      grid-area: 1 / 1 / 2 / 2;
+      width: 334px;
+      min-height: 592px;
+
+      &:nth-child(2) {
+        margin: 300px auto 0;
+      }
+
+      &:nth-child(3) {
+        margin: 600px auto 0;
+      }
     }
 
     &-item:not(.active) {
