@@ -165,6 +165,7 @@ body {
 }
 
 .main {
+  position: relative;
   padding-bottom: 38px;
   height: auto;
 }
@@ -193,7 +194,7 @@ body {
   height: 632px;
   margin: 0 147px 0 191px;
 
-  &-item {
+  &-item:not(.loader) {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -354,5 +355,37 @@ body {
     &_additional {
       font-weight: 500;
     }
+  }
+}
+
+.loader-box {
+  position: absolute;
+  top: 150px;
+  left: calc(50% - 25px);
+
+  width: 50px;
+  height: 50px;
+
+  transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
+}
+
+.loader-06 {
+  height: 100%;
+  border: 0.2em solid currentcolor;
+  border-radius: 50%;
+  animation: loader-06 1s ease-out infinite;
+}
+
+@keyframes loader-06 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }

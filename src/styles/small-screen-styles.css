@@ -17,7 +17,10 @@
   .offer-item {
     grid-area: 1/1/2/2;
     width: 334px;
-    min-height: 592px;
+    height: 592px;
+    transform: scale(0);
+    transform-origin: top center;
+    transition: transform 0.5s;
   }
   .offer-item:nth-child(2) {
     margin: 300px auto 0;
@@ -26,7 +29,10 @@
     margin: 700px auto 0;
   }
   .offer-item:not(.active) {
-    transform: scale(0.9);
+    width: 95%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   .offer-item.active {
     box-shadow: 0 -15px 13px 3px rgba(0, 0, 0, 0.5019607843), 0 15px 13px -3px rgba(0, 0, 0, 0.5019607843);

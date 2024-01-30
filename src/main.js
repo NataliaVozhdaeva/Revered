@@ -49,11 +49,12 @@ cards.forEach((item) => {
 // smooth appearance
 
 const showCard = (el) => {
-  console.log(el, count);
   el.style.transform = 'scale(1)';
 };
 
 window.addEventListener('load', () => {
+  document.querySelector('.loader-box').style.display = 'none';
+
   count = 0;
 
   const intervalId = setInterval(function () {

@@ -23,7 +23,10 @@ $dark-green: #1d252b;
     &-item {
       grid-area: 1 / 1 / 2 / 2;
       width: 334px;
-      min-height: 592px;
+      height: 592px;
+      transform: scale(0);
+      transform-origin: top center;
+      transition: transform 0.5s;
 
       &:nth-child(2) {
         margin: 300px auto 0;
@@ -35,7 +38,10 @@ $dark-green: #1d252b;
     }
 
     &-item:not(.active) {
-      transform: scale(0.9);
+      width: 95%;
+      height: auto;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &-item.active {
