@@ -360,7 +360,7 @@ body {
 
 .wrapper {
   max-width: 1306px;
-  margin: 0 auto 38px;
+  margin: auto;
 }
 
 .header {
@@ -386,6 +386,11 @@ body {
   flex-wrap: wrap;
   gap: 20px 50px;
   align-items: center;
+}
+.navigation-link_active {
+  font-size: 12.091px;
+  font-weight: 600;
+  color: #fff;
 }
 
 .logo {
@@ -427,6 +432,11 @@ body {
   background-color: #983839;
 }
 
+.main {
+  padding-bottom: 38px;
+  height: auto;
+}
+
 .main-title {
   font-weight: 600;
   margin: 0;
@@ -463,7 +473,10 @@ body {
   min-height: 592px;
   background-color: #6a994e;
   border-radius: 11px;
-  box-shadow: 0px 3.785px 94.621px 0px rgba(0, 0, 0, 0.1490196078);
+  box-shadow: 0px 4px 95px 0px rgba(0, 0, 0, 0.1490196078);
+  transform: scale(0);
+  transform-origin: top center;
+  transition: transform 0.5s;
 }
 .offer-item:nth-child(2) {
   margin-left: 315px;

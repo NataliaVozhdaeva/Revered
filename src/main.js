@@ -42,6 +42,25 @@ const makeActive = (e) => {
 };
 
 cards.forEach((item) => {
-  item.addEventListener('mouseover', makeActive);
+  item.addEventListener('click', makeActive); //mouseover as a variant
   item.addEventListener('touchstart', makeActive);
+});
+
+// smooth appearance
+
+const showCard = (el) => {
+  console.log(el, count);
+  el.style.transform = 'scale(1)';
+};
+
+window.addEventListener('load', () => {
+  count = 0;
+
+  const intervalId = setInterval(function () {
+    showCard(cards[count]);
+    count++;
+    if (count === cards.length) {
+      clearInterval(intervalId);
+    }
+  }, (count + 1) * 1000);
 });

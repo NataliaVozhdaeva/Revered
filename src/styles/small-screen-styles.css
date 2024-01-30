@@ -9,7 +9,7 @@
   }
   .offer {
     grid-template-columns: 334px;
-    grid-template-rows: repeat(3, 632px);
+    grid-template-rows: auto;
     margin: auto;
     max-width: 350px;
     height: auto;
@@ -29,7 +29,6 @@
     transform: scale(0.9);
   }
   .offer-item.active {
-    top: calc(50% - 300px);
     box-shadow: 0 -15px 13px 3px rgba(0, 0, 0, 0.5019607843), 0 15px 13px -3px rgba(0, 0, 0, 0.5019607843);
   }
 }
@@ -166,9 +165,6 @@
   }
   .offer-item {
     width: auto;
-  }
-  .offer-item.active {
-    left: 0;
   }
   .offer-header,
 .offer-features {
