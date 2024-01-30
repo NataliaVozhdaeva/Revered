@@ -122,5 +122,5 @@ window.addEventListener('load', () => {
     if (count === cards.length) {
       clearInterval(intervalId);
     }
-  }, (count + 1) * 100);
+  }, (count + 1) * 1000);
 });
