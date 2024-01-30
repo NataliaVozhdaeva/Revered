@@ -11,6 +11,7 @@ const toggleMobileMenu = () => {
 };
 
 menuIcon.addEventListener('click', toggleMobileMenu);
+menuIcon.addEventListener('touchend', toggleMobileMenu);
 
 menuItems.forEach((item) => {
   item.addEventListener('click', toggleMobileMenu);

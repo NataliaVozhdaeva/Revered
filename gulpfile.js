@@ -2,6 +2,9 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const browserSync = require('browser-sync').create();
 const del = require('del');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
 
 function browsersync() {
   browserSync.init({
@@ -14,6 +17,14 @@ function buildSass() {
   return src('src/styles/**/*.scss')
     .pipe(sass())
     .on('error', sass.logError)
+    .pipe(
+      postcss([
+        autoprefixer({
+          overrideBrowserslist: ['last 2 versions'],
+        }),
+        cssnano(),
+      ])
+    )
     .pipe(dest('src/styles'))
     .pipe(dest('dist/styles'))
     .pipe(browserSync.stream());

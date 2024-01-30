@@ -91,7 +91,7 @@ body {
   align-items: center;
 
   max-width: 1195px;
-  margin: 0px 32px 45px 56px;
+  margin: 0px 32px 47px 56px;
   padding-top: 35px;
   min-height: 39px;
 
@@ -168,14 +168,13 @@ body {
   position: relative;
   padding-bottom: 38px;
   height: auto;
-}
 
-.main-title {
-  @include title;
-  font-size: 41px;
-  text-align: center;
-  margin-bottom: 32px;
-  margin-left: 13px;
+  &-title {
+    @include title;
+    font-size: 41px;
+    text-align: center;
+    margin-bottom: 32px;
+  }
 }
 
 .offer-title,
@@ -192,7 +191,7 @@ body {
 
   max-width: 969px;
   height: 632px;
-  margin: 0 147px 0 191px;
+  margin: 0 147px 0 181px;
 
   &-item {
     display: flex;
