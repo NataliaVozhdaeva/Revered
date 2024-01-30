@@ -27,17 +27,34 @@ document.addEventListener('click', (e) => {
 const cards = document.querySelectorAll('.offer-item');
 const cardBtns = document.querySelectorAll('.offer-btn');
 const currencyArray = ['\u0024', '\u20BD', '\u20AC'];
+//const exchangeRate = [100, 0.8];
 const currencyPoints = document.querySelectorAll('.offer-currency');
+const price = document.querySelectorAll('.offer-price');
+let currencyCount = 0;
 
 const makeContent = (el) => {
   el.querySelector('.offer-btn').textContent = el.classList.contains('active') ? 'Get Started' : 'Start Free Trial';
 };
 
-let currCount = 0;
+const countPrice = (currentCurrency, currentPrice) => {
+  switch (currentCurrency) {
+    case '\u20BD':
+      return Math.round(currentPrice * 80);
+
+    case '\u20AC':
+      return Math.round(currentPrice / 100);
+
+    default:
+      return Math.round(currentPrice * 1.25);
+  }
+};
 
 const changeCurrency = () => {
-  currCount === currencyArray.length - 1 ? (currCount = 0) : currCount++;
-  currencyPoints.forEach((el) => (el.textContent = currencyArray[currCount]));
+  currencyCount === currencyArray.length - 1 ? (currencyCount = 0) : currencyCount++;
+  currencyPoints.forEach((el, index) => {
+    el.textContent = currencyArray[currencyCount];
+    price[index].textContent = countPrice(el.textContent, price[index].textContent);
+  });
 };
 
 cards.forEach((item) => makeContent(item));
@@ -46,6 +63,7 @@ const handleChanges = (e) => {
   switch (true) {
     case e.target.classList.contains('offer-currency'):
       changeCurrency();
+
       break;
 
     default:
@@ -80,5 +98,5 @@ window.addEventListener('load', () => {
     if (count === cards.length) {
       clearInterval(intervalId);
     }
-  }, (count + 1) * 1000);
+  }, (count + 1) * 100);
 });
