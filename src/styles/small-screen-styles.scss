@@ -24,6 +24,10 @@ $dark-green: #1d252b;
       grid-area: 1 / 1 / 2 / 2;
       width: 334px;
       height: 592px;
+
+      margin-left: auto;
+      margin-right: auto;
+
       transform: scale(0);
       transform-origin: top center;
       transition: transform 0.5s;
@@ -39,9 +43,6 @@ $dark-green: #1d252b;
 
     &-item:not(.active) {
       width: 95%;
-      height: auto;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     &-item.active {

@@ -194,7 +194,7 @@ body {
   height: 632px;
   margin: 0 147px 0 191px;
 
-  &-item:not(.loader) {
+  &-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -230,6 +230,14 @@ body {
 
   &-title {
     margin-bottom: 18px;
+  }
+
+  &-currency {
+    cursor: pointer;
+
+    &:hover {
+      color: $strong-red;
+    }
   }
 
   &-btn {
@@ -369,14 +377,14 @@ body {
   transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
 }
 
-.loader-06 {
+.loader {
   height: 100%;
   border: 0.2em solid currentcolor;
   border-radius: 50%;
-  animation: loader-06 1s ease-out infinite;
+  animation: loader 1s ease-out infinite;
 }
 
-@keyframes loader-06 {
+@keyframes loader {
   0% {
     transform: scale(0);
     opacity: 0;

@@ -463,7 +463,7 @@ body {
   height: 632px;
   margin: 0 147px 0 191px;
 }
-.offer-item:not(.loader) {
+.offer-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -479,10 +479,10 @@ body {
   transform-origin: top center;
   transition: transform 0.5s;
 }
-.offer-item:not(.loader):nth-child(2) {
+.offer-item:nth-child(2) {
   margin-left: 315px;
 }
-.offer-item:not(.loader):nth-child(3) {
+.offer-item:nth-child(3) {
   margin-left: 635px;
 }
 .offer-header {
@@ -491,6 +491,12 @@ body {
 }
 .offer-title {
   margin-bottom: 18px;
+}
+.offer-currency {
+  cursor: pointer;
+}
+.offer-currency:hover {
+  color: #bc4749;
 }
 .offer-btn {
   align-self: center;
@@ -596,14 +602,14 @@ body {
   transition: 0.3s color, 0.3s border, 0.3s transform, 0.3s opacity;
 }
 
-.loader-06 {
+.loader {
   height: 100%;
   border: 0.2em solid currentcolor;
   border-radius: 50%;
-  animation: loader-06 1s ease-out infinite;
+  animation: loader 1s ease-out infinite;
 }
 
-@keyframes loader-06 {
+@keyframes loader {
   0% {
     transform: scale(0);
     opacity: 0;
