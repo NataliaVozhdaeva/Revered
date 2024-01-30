@@ -22,22 +22,31 @@ function buildSass() {
 }
 
 function html() {
-  return src('src/**/*.html').pipe(browserSync.stream()); //.pipe(dest('dist/'));
-}
-
-function serve() {
-  watch('src/**/*.scss', buildSass);
-  watch('src/**/*.html', html);
+  return src('src/**/*.html').pipe(browserSync.stream()).pipe(dest('dist/'));
 }
 
 function copyimg() {
   return src('src/assets/**/*.*').pipe(dest('dist/assets/'));
 }
 
+function copyFavivon() {
+  return src('src/favicon.ico').pipe(dest('dist/'));
+}
+
 function cleanDist() {
   return del('dist/**/*', { force: true });
 }
 
+function buildJs() {
+  return src('src/main.js').pipe(browserSync.stream()); //.pipe(dest('dist'));
+}
+
+function serve() {
+  watch('src/**/*.scss', buildSass);
+  watch('src/**/*.html', html);
+  watch(['src/js/**/*.js', '!src/js/**/*.min.js'], buildJs);
+}
+
 exports.clean = series(cleanDist);
-exports.build = series(cleanDist, buildSass, html, copyimg);
-exports.default = series([cleanDist, buildSass], parallel(browsersync, serve));
+exports.build = series(cleanDist, buildSass, buildJs, html, copyimg, copyFavivon);
+exports.default = series([cleanDist, buildSass, buildJs], parallel(browsersync, serve));
