@@ -33,11 +33,11 @@ $dark-green: #1d252b;
       transition: transform 0.5s;
 
       &:nth-child(2) {
-        margin: 300px auto 0;
+        margin: 650px auto 0;
       }
 
       &:nth-child(3) {
-        margin: 700px auto 0;
+        margin: 1270px auto 0;
       }
     }
 
@@ -158,6 +158,10 @@ $dark-green: #1d252b;
   }
 
   .navigation.show {
+    justify-content: space-between;
+    width: 90vw;
+    height: 300px;
+
     transform: translateX(0px);
   }
 
